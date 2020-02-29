@@ -1,9 +1,9 @@
 const fs = require("fs");
 
-fs.readdir("logs", (error, files) => {
+fs.rename("logs/hello.log", "logs/greeting.log", error => {
   if (error) {
     console.log(error);
   } else {
-    console.log(files);
+    console.log("重命名成功");
   }
 });
