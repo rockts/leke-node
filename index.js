@@ -1,19 +1,23 @@
 const fs = require("fs");
 
-fs.readdirSync("logs").map(file => {
-  fs.unlink(`logs/${file}`, error => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log(`成功的删除了文件：${file}`);
-    }
-  });
+var fileReadStream = fs.createReadStream("data.json");
+var fileWriteStream = fs.createWriteStream("data-1.json");
+
+var count = 0;
+
+// fileReadStream.once("data", chunk => {
+//   console.log(chunk.toString());
+// });
+
+fileReadStream.on("data", chunk => {
+  console.log(`${++count} 接收到：${chunk.length}`);
+  fileWriteStream.write(chunk);
 });
 
-fs.rmdir("logs", error => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("成功的删除了目录：logs");
-  }
+fileReadStream.on("end", () => {
+  console.log("---结束---");
+});
+
+fileReadStream.on("error", error => {
+  console.log(error);
 });
