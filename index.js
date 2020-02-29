@@ -1,11 +1,9 @@
 const fs = require("fs");
 
-fs.stat("index.js", (error, stats) => {
+fs.mkdir("logs", error => {
   if (error) {
     console.log(error);
   } else {
-    console.log(stats);
-    console.log(`文件：${stats.isFile()}`);
-    console.log(`目录：${stats.isDirectory()}`);
+    console.log("成功创建目录： logs");
   }
 });
