@@ -1,9 +1,9 @@
 const fs = require("fs");
 
-fs.readFile("logs/hello.log", "utf8", (error, data) => {
+fs.readdir("logs", (error, files) => {
   if (error) {
     console.log(error);
   } else {
-    console.log(data);
+    console.log(files);
   }
 });
