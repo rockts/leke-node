@@ -6,14 +6,21 @@ const LekeDemo = require("../lib/leke-demo");
 var demo = new LekeDemo();
 
 describe("LekeDemo", function() {
-  it("测试使用 Sinon Spy", function() {
-    sinon.spy(demo, "logMessage");
+  it("测试使用 Sinon Stub", function() {
+    var stub = sinon.stub(demo, "logMessage");
+    stub.withArgs("hello").returns("hello");
     demo.send("hello");
-    // console.log(demo.logMessage);
-    expect(demo.logMessage.calledOnce).to.be.true;
-    expect(demo.logMessage.firstCall.args[0]).to.equal("hello");
-    demo.logMessage.restore();
+    expect(stub.returnValues[0]).to.equal("hello");
+    stub.restore();
   });
+  // it("测试使用 Sinon Spy", function() {
+  //   sinon.spy(demo, "logMessage");
+  //   demo.send("hello");
+  //   // console.log(demo.logMessage);
+  //   expect(demo.logMessage.calledOnce).to.be.true;
+  //   expect(demo.logMessage.firstCall.args[0]).to.equal("hello");
+  //   demo.logMessage.restore();
+  // });
   // it("给汽车引擎加水是不能接受的事情", function() {
   //   expect(demo.engine.bind(demo, "water")).to.throw("not accept");
   // });
