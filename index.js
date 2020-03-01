@@ -13,6 +13,10 @@ app.get("/", (request, response) => {
   response.render("index");
 });
 
+app.get("/comments/new", (request, response) => {
+  response.render("comments/new");
+});
+
 app.listen(3000, () => {
   console.log("Listen port: 3000");
 });
