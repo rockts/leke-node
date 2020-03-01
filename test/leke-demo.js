@@ -1,19 +1,12 @@
 const chai = require("chai");
 const expect = chai.expect;
+const LekeDemo = require("../lib/leke-demo");
+
+var demo = new LekeDemo();
 
 describe("LekeDemo", function() {
-  it("使用 expect 风格的断言测试", function() {
-    var value = "hello";
-    var number = 3;
-
-    expect(number).to.be.at.most(5);
-    expect(number).to.be.at.least(3);
-    expect(number).to.be.within(1, 3);
-
-    expect(value).to.exist;
-    expect(value).to.be.a("string");
-    expect(value).to.equal("hello");
-    expect(value).to.not.equal("您好");
-    expect(value).to.have.length(5);
+  it("单价是 10 块钱的 3 件商品小计金额应该是 30 块", function() {
+    var subtotal = demo.subtotal(10, 3);
+    expect(subtotal).to.equal(30);
   });
 });
