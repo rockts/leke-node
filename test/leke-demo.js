@@ -1,11 +1,16 @@
 const chai = require("chai");
-const assert = chai.assert;
+const should = chai.should();
 
 describe("LekeDemo", function() {
-  it("使用 assert 风格的断言测试", function() {
+  it("使用 should 分割的断言测试", function() {
     var value = "hello";
-    assert.typeOf(value, "string");
-    assert.equal(value, "hello");
-    assert.lengthOf(value, 5);
+    value.should.exist.and.be
+      .a("string")
+      .and.equal("hello")
+      .and.have.length(5);
+    // value.should.be.a("string");
+    // value.should.equal("hello");
+    // value.should.not.equal("您好");
+    // value.should.have.length(5);
   });
 });
