@@ -1,16 +1,19 @@
 const chai = require("chai");
-const should = chai.should();
+const expect = chai.expect;
 
 describe("LekeDemo", function() {
-  it("使用 should 分割的断言测试", function() {
+  it("使用 expect 风格的断言测试", function() {
     var value = "hello";
-    value.should.exist.and.be
-      .a("string")
-      .and.equal("hello")
-      .and.have.length(5);
-    // value.should.be.a("string");
-    // value.should.equal("hello");
-    // value.should.not.equal("您好");
-    // value.should.have.length(5);
+    var number = 3;
+
+    expect(number).to.be.at.most(5);
+    expect(number).to.be.at.least(3);
+    expect(number).to.be.within(1, 3);
+
+    expect(value).to.exist;
+    expect(value).to.be.a("string");
+    expect(value).to.equal("hello");
+    expect(value).to.not.equal("您好");
+    expect(value).to.have.length(5);
   });
 });
