@@ -18,6 +18,10 @@ app.get("/", (request, response) => {
   response.render("index");
 });
 
+app.get("/comments", (request, response) => {
+  response.render("comments/index");
+});
+
 app.get("/comments/new", (request, response) => {
   response.render("comments/new");
 });
