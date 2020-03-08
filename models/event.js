@@ -8,7 +8,7 @@ const schema = new db.Schema(
       type: String
     }
   },
-  optins
+  options
 );
 
 const Event = db.model("Event", schema);
