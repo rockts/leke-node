@@ -42,7 +42,12 @@ const auth = (request, response) => {
     .catch(error => response.status(400).send(error));
 };
 
+const me = (request, response) => {
+  response.send(`hello ~ ${request.decoded.userName}`);
+};
+
 module.exports = {
   store,
-  auth
+  auth,
+  me
 };
