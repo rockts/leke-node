@@ -1,5 +1,20 @@
-const crypto = require("crypto");
-const hash = crypto.createHash("sha256");
+const bcrypt = require("bcrypt");
 
-hash.update("password");
-console.log(hash.digest("base64"));
+const password = "password";
+
+bcrypt.genSalt(10, (error, salt) => {
+  console.log("salt: ", salt);
+
+  bcrypt.hash(password, salt, (error, hash) => {
+    console.log("hash: ", hash);
+  });
+});
+
+const hashPassword =
+  "$2b$10$Na3q/RGJIIygTHL.ObhMjeqbKXN44l3z1BCYaoJNwTamcgypaiy7a";
+
+const userInputPassword = "password1";
+
+bcrypt
+  .compare(userInputPassword, hashPassword)
+  .then(result => console.log(result));
