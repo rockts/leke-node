@@ -10,6 +10,7 @@ router
 router
   .route("/events/:id")
   .get(EventController.show)
-  .patch(EventController.update);
+  .patch(EventController.update)
+  .delete(EventController.destroy);
 
 module.exports = router;
