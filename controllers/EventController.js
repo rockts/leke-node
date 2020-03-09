@@ -20,8 +20,20 @@ const show = (request, response) => {
   Event.findById(id).then(document => response.send(document));
 };
 
+const update = (request, response) => {
+  const id = request.params.id;
+  const body = {
+    title: request.body.title
+  };
+
+  Event.findByIdAndUpdate(id, { $set: body }, { new: true }).then(document =>
+    response.send(document)
+  );
+};
+
 module.exports = {
   index,
   store,
-  show
+  show,
+  update
 };

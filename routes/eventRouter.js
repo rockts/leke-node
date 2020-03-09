@@ -7,5 +7,9 @@ router
   .get(EventController.index)
   .post(EventController.store);
 
-router.route("/events/:id").get(EventController.show);
+router
+  .route("/events/:id")
+  .get(EventController.show)
+  .patch(EventController.update);
+
 module.exports = router;
