@@ -113,7 +113,7 @@ bluebird@3.5.0:
   resolved "https://registry.npm.taobao.org/bluebird/download/bluebird-3.5.0.tgz?cache=0&sync_timestamp=1580303055242&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fbluebird%2Fdownload%2Fbluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
   integrity sha1-eRQg1/VR7qKJdFOop3ZT+WYG1nw=
 
-body-parser@1.19.0:
+body-parser@1.19.0, body-parser@^1.19.0:
   version "1.19.0"
   resolved "https://registry.npm.taobao.org/body-parser/download/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
   integrity sha1-lrJwnlfJxOCab9Zqj9l5hE9p8Io=
@@ -892,7 +892,7 @@ mongodb@2.2.34:
     mongodb-core "2.1.18"
     readable-stream "2.2.7"
 
-mongoose@^4.9.3:
+mongoose@^4.11.1:
   version "4.13.20"
   resolved "https://registry.npm.taobao.org/mongoose/download/mongoose-4.13.20.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmongoose%2Fdownload%2Fmongoose-4.13.20.tgz#7d6cdc35eca23306bb7388a74a08be1dc1487a7d"
   integrity sha1-fWzcNeyiMwa7c4inSgi+HcFIen0=
