@@ -19,3 +19,10 @@ let server = app.listen(3000, () => {
 });
 
 let io = socketIO(server);
+
+io.on("connection", socket => {
+  console.log("user connected");
+  socket.on("disconnect", () => {
+    console.log("user disconnected");
+  });
+});
