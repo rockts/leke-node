@@ -14,7 +14,14 @@ const store = (request, response) => {
   event.save().then(document => response.send(document));
 };
 
+const show = (request, response) => {
+  const id = request.params.id;
+
+  Event.findById(id).then(document => response.send(document));
+};
+
 module.exports = {
   index,
-  store
+  store,
+  show
 };
