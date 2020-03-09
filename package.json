@@ -7,7 +7,8 @@
     "start": "./node_modules/.bin/nodemon"
   },
   "dependencies": {
-    "mongoose": "^4.9.3",
+    "express": "^4.17.1",
+    "mongoose": "^4.11.1",
     "request": "^2.88.2"
   },
   "devDependencies": {
