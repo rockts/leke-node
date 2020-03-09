@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon"
+    "start": "./node_modules/.bin/nodemon index.js"
   },
   "dependencies": {
-    "request": "^2.88.2"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
